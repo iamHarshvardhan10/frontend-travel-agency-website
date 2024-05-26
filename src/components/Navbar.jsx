@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <>
       <div className="absolute top-0 -z-10">
-        <img src={back} alt="" />
+        <img src={back} alt=""/>
       </div>
       <div>
         <img
@@ -19,23 +19,23 @@ const Navbar = () => {
         <img src={logo} alt="logo" />
         <div className="flex items-center gap-8">
           <ul className="flex items-center gap-16">
-            <li className="text-lg text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
+            <li className="text-lg font-sans text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
               Home
             </li>
-            <li className="text-lg text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
+            <li className="text-lg font-sans text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
               About us
             </li>
-            <li className="text-lg text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
+            <li className="text-lg font-sans text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
               Tours
             </li>
-            <li className="text-lg text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
+            <li className="text-lg font-sans text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
               Reviews
             </li>
-            <li className="text-lg text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
+            <li className="text-lg font-sans text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
               Contact
             </li>
           </ul>
-          <button className="text-sm text-white  bg-[#489a6a] px-4 py-2  rounded-md">
+          <button className="text-sm font-sans text-white  bg-[#489a6a] px-4 py-2  rounded-md">
             1233-123-342
           </button>
         </div>
