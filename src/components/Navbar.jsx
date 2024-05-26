@@ -1,38 +1,29 @@
 import logo from "../assets/asset 0.png";
-import front from "../assets/asset 9.png";
-import back from "../assets/asset 8.jpeg";
+
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <>
-      <div className="absolute top-0 -z-10">
-        <img src={back} alt=""/>
-      </div>
-      <div>
-        <img
-          src={front}
-          alt=""
-          className="w-full h-auto absolute opacity-55 top-0 -z-10 object-contain "
-        />
-      </div>
+
       <nav className="flex item-center justify-between mt-[20px] mb-0 ml-[35px] mr-[35px]">
         <img src={logo} alt="logo" />
         <div className="flex items-center gap-8">
           <ul className="flex items-center gap-16">
-            <li className="text-lg font-sans text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
-              Home
+            <li className="text-lg font-sans text-white font-medium hover:text-[#489a6a] cursor-pointer">
+              <Link to="/">Home</Link>
             </li>
             <li className="text-lg font-sans text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
-              About us
+              <Link to="/about">About us</Link>
             </li>
             <li className="text-lg font-sans text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
-              Tours
+              <Link to="/tour">Tours</Link>
             </li>
             <li className="text-lg font-sans text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
-              Reviews
+              <Link to="/review">Reviews</Link>
             </li>
             <li className="text-lg font-sans text-white font-semibold  hover:text-[#489a6a] cursor-pointer">
-              Contact
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
           <button className="text-sm font-sans text-white  bg-[#489a6a] px-4 py-2  rounded-md">
