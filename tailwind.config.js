@@ -6,7 +6,12 @@ export default {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      fontFamily : {
+        handwriting : 'Yesteryear',
+        workSans : 'work sans'
+      }
+    },
   },
   plugins: [],
 }

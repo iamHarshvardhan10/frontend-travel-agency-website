@@ -25,6 +25,8 @@ const Home = () => {
         <button className="flex items-center text-white gap-4 mt-[50px] py-2 px-10 uppercase font-sans bg-[#4ca0af] rounded-md">
           Book My Tour <FaArrowAltCircleRight className="text-white" />
         </button>
+        <div>
+        </div>
       </div>
     </>
   );
