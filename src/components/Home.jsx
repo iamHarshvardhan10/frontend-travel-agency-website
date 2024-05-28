@@ -1,6 +1,7 @@
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import front from "../assets/asset 9.png";
 import back from "../assets/asset 8.jpeg";
+import AboutUsComponent from "./AboutUsComponent";
 const Home = () => {
   return (
     <>
@@ -27,6 +28,7 @@ const Home = () => {
         </button>
         <div>
         </div>
+        <AboutUsComponent/>
       </div>
     </>
   );
