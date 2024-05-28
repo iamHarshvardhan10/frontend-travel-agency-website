@@ -2,6 +2,8 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import front from "../assets/asset 9.png";
 import back from "../assets/asset 8.jpeg";
 import AboutUsComponent from "./AboutUsComponent";
+import LatestReview from "./LatestReview";
+import Partners from "./Partners";
 const Home = () => {
   return (
     <>
@@ -30,6 +32,8 @@ const Home = () => {
         </div>
         <AboutUsComponent/>
       </div>
+        <LatestReview/>
+        <Partners/>
     </>
   );
 };
