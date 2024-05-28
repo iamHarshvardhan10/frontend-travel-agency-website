@@ -5,6 +5,7 @@ import AboutUsComponent from "./AboutUsComponent";
 import LatestReview from "./LatestReview";
 import Partners from "./Partners";
 import Offers from "./Offers";
+import PopularTours from "./PopularTours";
 const Home = () => {
   return (
     <>
@@ -31,6 +32,7 @@ const Home = () => {
         </button>
         <div>
         </div>
+        <PopularTours/>
         <AboutUsComponent/>
       </div>
         <LatestReview/>
