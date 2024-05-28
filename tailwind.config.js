@@ -7,10 +7,10 @@ export default {
 
   theme: {
     extend: {
-      fontFamily : {
-        handwriting : 'Yesteryear',
-        workSans : 'work sans'
-      }
+      fontFamily: {
+        handwriting: 'Yesteryear',
+        workSans: 'work sans'
+      },
     },
   },
   plugins: [],
