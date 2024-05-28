@@ -4,6 +4,7 @@ import back from "../assets/asset 8.jpeg";
 import AboutUsComponent from "./AboutUsComponent";
 import LatestReview from "./LatestReview";
 import Partners from "./Partners";
+import Offers from "./Offers";
 const Home = () => {
   return (
     <>
@@ -33,6 +34,7 @@ const Home = () => {
         <AboutUsComponent/>
       </div>
         <LatestReview/>
+        <Offers/>
         <Partners/>
     </>
   );
