@@ -10,24 +10,24 @@ const LatestReview = () => {
           <img
             src={front}
             alt=""
-            className="w-[100%] h-[180vh]  opacity-55   object-cover "
+            className="w-[100%] lg:h-[180vh] sm:h-[450vh] max-sm:h-[200vh]  opacity-55   object-cover "
           />
         </div>
-        <div className="absolute top-0 mx-[171px] my-[100px]">
-          <h1 className="text-center font-handwriting text-[32px] text-white">
+        <div className="absolute top-0 lg:mx-[171px] lg:my-[100px] sm:mx-[100px] max-sm:mx-[10px]">
+          <h1 className="text-center font-handwriting lg:text-[32px] sm:text-[36px] text-white">
             our customer love us
           </h1>
-          <h1 className="text-center text-[75px] text-white">Latest Reviews</h1>
+          <h1 className="text-center lg:text-[75px] sm:text-[42px] text-white">Latest Reviews</h1>
 
-          <div className="grid grid-cols-2 mt-[80px] ">
+          <div className="lg:grid lg:grid-cols-2 lg:mt-[80px] md:flex md:flex-col ">
             {sliceReview.map((review, index) => (
               <div
                 key={review.id}
                 className={`p-4 ${
                   index == 2 || index == 4
-                    ? "bg-[#4b4b4b] opacity-70"
-                    : "bg-[#489a6a] opacity-80 "
-                }  px-[50px] py-[50px]`}
+                    ? "lg:bg-[#4b4b4b] opacity-70"
+                    : "lg:bg-[#489a6a] opacity-80 "
+                }  lg:px-[50px] lg:py-[50px] lg:border-none lg:rounded-none lg:mb-0 sm:border max-sm:border sm:px-4 max-sm:p-4 sm:mb-2 max-sm:mb-2 sm:rounded-2xl`}
               >
                 <p className="text-[18px] text-white font-bold font-workSans mt-[20px]">
                   {review.review}
@@ -49,7 +49,7 @@ const LatestReview = () => {
                     <FcRating />
                   </span>
                 </div>
-                <h1 className="text-[42px] text-white font-handwriting mt-[50px]">
+                <h1 className="text-[42px] text-white font-handwriting lg:mt-[50px]">
                   {review.name}
                 </h1>
               </div>
