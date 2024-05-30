@@ -1,10 +1,32 @@
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import aboutComoment from "../assets/asset 14.jpeg";
-
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 const AboutUsComponent = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="lg:flex lg:flex-row md:flex md:flex-col-reverse sm:flex sm:flex-col-reverse max-sm:flex max-sm:flex-col-reverse items-center justify-between">
-      <img src={aboutComoment} alt="" className="max-sm:w-full max-sm:p-2"/>
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={cardVariants}
+      transition={{ duration: 0.5 }}
+      className="lg:flex lg:flex-row md:flex md:flex-col-reverse sm:flex sm:flex-col-reverse max-sm:flex max-sm:flex-col-reverse items-center justify-between"
+    >
+      <img src={aboutComoment} alt="" className="max-sm:w-full max-sm:p-2" />
       <div className="lg:p-20">
         <span className="lg:text-[32px] md:text-[42px] sm:text-[42px] max-sm:text-[42px] font-handwriting">
           a few words
@@ -23,7 +45,7 @@ const AboutUsComponent = () => {
           View All Tours <FaArrowAltCircleRight className="text-white" />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

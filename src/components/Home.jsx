@@ -6,11 +6,30 @@ import LatestReview from "./LatestReview";
 import Partners from "./Partners";
 import Offers from "./Offers";
 import PopularTours from "./PopularTours";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 const Home = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+  const cardVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   return (
     <div>
       <div className="absolute top-0 -z-10 ">
-        <img src={back} alt="" className="lg:w-full max-sm:w-[550px] max-sm:h-[550px]"/>
+        <img
+          src={back}
+          alt=""
+          className="lg:w-full max-sm:w-[550px] max-sm:h-[550px]"
+        />
       </div>
       <div className="">
         <img
@@ -19,7 +38,14 @@ const Home = () => {
           className="lg:w-full lg:h-auto  max-sm:w-[550px] max-sm:h-[550px] max-sm:absolute max-sm:top-0 max-sm:object-cover  absolute opacity-55 top-0 -z-10 object-contain"
         />
       </div>
-      <div className="lg:mx-[175px] lg:my-[150px] md:mx-[150px] md:my-[50px] sm:mx-[50px] sm:my-[30px] max-sm:mx-[20px]  max-sm:my-[100px] ">
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={cardVariants}
+        transition={{ duration: 0.5 }}
+        className="lg:mx-[175px] lg:my-[150px] md:mx-[150px] md:my-[50px] sm:mx-[50px] sm:my-[30px] max-sm:mx-[20px]  max-sm:my-[100px] "
+      >
         <h1 className="text-white  lg:text-[100px] md:text-[50px] sm:text-[35px] max-sm:text-[35px] lg:leading-[140px] md:leading-[70px]  lg:w-[70%] md:w-[90%]">
           Travel & Explore the World
         </h1>
@@ -32,7 +58,7 @@ const Home = () => {
         </button>
         <PopularTours />
         <AboutUsComponent />
-      </div>
+      </motion.div>
       <LatestReview />
       <Offers />
       <Partners />

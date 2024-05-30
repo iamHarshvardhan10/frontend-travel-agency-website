@@ -3,13 +3,23 @@ import logo from "../assets/asset 0.png";
 
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   useEffect(() => {
     const handleScroll = () => {
       if (menuOpen) {
@@ -26,8 +36,20 @@ const Navbar = () => {
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
+
+  const cardVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+  };
   return (
-    <nav className="relative md:flex md:item-center justify-between lg:mt-[20px] md:mb-0 md:ml-[35px] md:mr-[35px] max-sm:ml-[10px] max-sm:mr-[10px] max-sm:mb-[10px] max-sm:mt-[10px] sm:ml-[10px] sm:mr-[10px] sm:mb-[10px] sm:mt-[10px]">
+    <motion.nav
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={cardVariants}
+      transition={{ duration: 0.5 }}
+      className="relative md:flex md:item-center justify-between lg:mt-[20px] md:mb-0 md:ml-[35px] md:mr-[35px] max-sm:ml-[10px] max-sm:mr-[10px] max-sm:mb-[10px] max-sm:mt-[10px] sm:ml-[10px] sm:mr-[10px] sm:mb-[10px] sm:mt-[10px]"
+    >
       <div className="flex items-center justify-between">
         <Link to="/" className="">
           <img src={logo} alt="logo" />
@@ -36,7 +58,11 @@ const Navbar = () => {
           onClick={toggleMenu}
           className="text-white md:hidden max-sm:block sm:block"
         >
-          {menuOpen ? <FaTimes className="text-[32px] text-black" /> : <FaBars className="text-[32px] text-white"  />}
+          {menuOpen ? (
+            <FaTimes className="text-[32px] text-black" />
+          ) : (
+            <FaBars className="text-[32px] text-white" />
+          )}
         </button>
       </div>
       <div
@@ -72,7 +98,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
