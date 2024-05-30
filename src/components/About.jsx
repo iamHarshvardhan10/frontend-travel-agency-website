@@ -10,35 +10,35 @@ const About = () => {
   return (
     <div>
       <div className="absolute top-0 -z-10">
-        <img src={aboutBanner} alt="" className="h-[490px]" />
+        <img src={aboutBanner} alt="" className="lg:w-full sm:h-[490px] max-sm:h-[350px]" />
       </div>
       <div>
         <img
           src={front}
           alt=""
-          className="w-full h-[490px] absolute opacity-55 top-0 -z-10"
+          className="w-full sm:h-[490px] max-sm:h-[350px] absolute opacity-55 top-0 -z-10"
         />
       </div>
-      <h1 className="mx-[160px] my-[130px] text-[100px] text-white">
+      <h1 className="lg:mx-[160px] lg:my-[130px] text-[100px] text-white sm:mx-[50px] sm:my-[120px]">
         About Us
       </h1>
 
-      <div className="mx-[171px] mt-[300px] mb-[100px]">
+      <div className="lg:mx-[171px] lg:mt-[300px] lg:mb-[100px] sm:mx-[50px] sm:mt-[250px] max-sm:mx-[20px]">
         <p className="text-4xl font-handwriting text-gray-600">
           a few words about
         </p>
-        <h1 className="text-[75px] text-gray-600">Who We Are</h1>
-        <p className="font-workSans text-[#414042] w-[70%] text-[18px]">
+        <h1 className="lg:text-[75px] sm:text-[100px] max-sm:text-[50px] text-gray-600">Who We Are</h1>
+        <p className="font-workSans text-[#414042] lg:w-[70%] sm:w-[100%] text-[18px]">
           Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
           lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis
           sem nibh id elit.
         </p>
 
-        <div className="flex items-center gap-[75px]">
+        <div className="lg:flex lg:items-center gap-[75px]">
           <img
             src={aboutImage}
             alt=""
-            className="w-[510px] h-[684px] mt-[35px]"
+            className="lg:w-[510px] lg:h-[684px] mt-[35px] sm:w-[810px] sm:h-[500px]"
           />
 
           <div className="flex flex-col items-center text-[#414042]">
@@ -64,12 +64,12 @@ const About = () => {
         </div>
       </div>
       <div className="parllaxImg">
-        <div className="absolute mx-[171px] -mt-[100px] px-[50px] py-[75px] bg-[#48a9a6]">
+        <div className="absolute lg:mx-[171px] -mt-[100px] px-[50px] py-[75px] bg-[#48a9a6] max-sm:flex max-sm:flex-col max-sm:px-[25px] max-sm:py-[25px]">
           <p className="text-[32px] font-handwriting text-white">
             we hope you share our
           </p>
-          <h1 className="text-[75px] text-white">Mission & Vision</h1>
-          <p className="text-[18px] font-workSans text-white mt-[25px] w-[95%]">
+          <h1 className="sm:text-[75px] text-white max-sm:text-[40px]">Mission & Vision</h1>
+          <p className="text-[18px] font-workSans text-white mt-[25px] lg:w-[95%]">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -78,21 +78,21 @@ const About = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <p className="text-[18px] font-workSans text-white mt-[40px] w-[95%]">
+          <p className="text-[18px] font-workSans text-white mt-[40px] lg:w-[95%]">
             Sed non mauris vitae erat consequat auctor eu in elit. Class aptent
             taciti sociosqu ad litora torquent per conubia nostra, per inceptos
             himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus
             condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet
             nisi. Proin condimentum fermentum nunc.
           </p>
-          <p className="text-[18px] font-workSans text-white mt-[40px] font-semibold w-[95%]">
+          <p className="text-[18px] font-workSans text-white mt-[40px] font-semibold lg:w-[95%]">
             Proin avida nibh vel velit auctor aliquet. Aenean sollicitudin,
             lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis
             sem nibh id elit.
           </p>
         </div>
       </div>
-      <div className="flex items-center mx-[171px] my-[40px]">
+      <div className="lg:flex items-center mx-[171px] my-[40px] max-sm:flex max-sm:flex-col max-sm:mx-[60px] max-sm:mt-[300px]">
           <div className="flex flex-col items-center p-4">
             <span>
               <FaAward className="text-4xl text-[#48a9a6]"/>

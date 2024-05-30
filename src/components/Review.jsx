@@ -13,15 +13,15 @@ const Review = () => {
         <img
           src={front}
           alt=""
-          className="w-full h-[550px] absolute opacity-55 top-0 -z-10"
+          className="w-full lg:h-[550px] sm:h-[230px] max-sm:h-[140px] absolute opacity-55 top-0 -z-10"
         />
       </div>
-      <h1 className="mx-[160px] my-[130px] text-[100px] text-white">Reviews</h1>
-      <div className="mx-[171px] mt-[300px]">
-        <h1 className="text-[75px] text-[#414042] ">What Our Client Say</h1>
-        <div className="flex flex-wrap justify-between">
+      <h1 className="sm:mx-[160px] lg:my-[130px]  sm:text-[100px] max-sm:text-[50px] text-white">Reviews</h1>
+      <div className="lg:mx-[171px] lg:mt-[300px] sm:mx-[20px] sm:mt-[100px] max-sm:mx-[20px]">
+        <h1 className="sm:text-[57px] max-sm:text-[70px] text-[#414042] ">What Our Client Say</h1>
+        <div className="sm:flex sm:flex-wrap sm:items-center  justify-between">
           {review.map((rev) => (
-            <div key={rev.id} className="w-[50%] mt-[50px] mb-[50px]">
+            <div key={rev.id} className="sm:w-[50%] mt-[50px] mb-[50px]">
               <p className="text-[18px] font-workSans text-[#414042] font-bold mt-[10px]">
                 {rev.review}
               </p>

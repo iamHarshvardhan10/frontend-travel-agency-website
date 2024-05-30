@@ -7,21 +7,21 @@ const Tours = () => {
   return (
     <div>
       <div className="absolute top-0 -z-10">
-        <img src={tourBanner} alt="" />
+        <img src={tourBanner} alt="lg:h-[500px]" />
       </div>
       <div>
         <img
           src={front}
           alt=""
-          className="w-full h-[550px] absolute opacity-35 top-0 -z-10"
+          className="lg:w-full lg:h-[550px] sm:h-0  max-sm:h-0 max-sm:w-0   absolute opacity-35 top-0 -z-10"
         />
       </div>
-      <h1 className="mx-[160px] my-[130px] text-[100px] text-white">Tours</h1>
-      <div className="mx-[171px] mt-[300px]">
-        <h1 className="text-[75px] text-gray-700 ">Top Destination</h1>
-        <div className="flex flex-wrap justify-between">
+      <h1 className="lg:mx-[160px] lg:my-[130px] sm:mx-[100px] sm:my-[60px] max-sm:mx-[20px] sm:text-[100px] max-sm:text-[50px] md:text-white">Tours</h1>
+      <div className="lg:mx-[171px] lg:mt-[300px] sm:mx-[20px] max-sm:mx-[20px] max-sm:mt-[50px]">
+        <h1 className="sm:text-[75px] max-sm:text-[50px] text-gray-700 ">Top Destination</h1>
+        <div className="sm:flex sm:flex-wrap sm:justify-between sm:gap-2">
           {tour.map((tour) => (
-            <div key={tour.id} className="w-[33.33%] mt-[50px] mb-[50px]">
+            <div key={tour.id} className="sm:w-[46%] mt-[50px] mb-[50px]">
               <img src={tour.image} alt="" className="w-[400px] h-[300px]" />
               <h1 className="text-[32px] font-handwriting mt-[35px]">
                 {tour.name}

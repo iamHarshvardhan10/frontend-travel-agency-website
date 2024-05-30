@@ -29,7 +29,7 @@ const Offers = () => {
               alt=""
               className="w-[350px] lg:h-[500px] sm:h-[300px] object-fill lg:rounded-sm sm:rounded-lg max-sm:rounded-xl"
             />
-            <div className="hover:bg-[#48a9a6] w-[350px] h-[500px] absolute top-0 opacity-60 cursor-pointer"></div>
+            <div className="lg:hover:bg-[#48a9a6] w-[350px] h-[500px] absolute top-0 opacity-60 cursor-pointer"></div>
             <div className="absolute top-0 p-10 cursor-pointer">
               <h1 className="lg:text-[42px] sm:text-[75px] max-sm:text-[35px] font-handwriting text-gray-700 underline">
                 {card.name}

@@ -9,17 +9,17 @@ import PopularTours from "./PopularTours";
 const Home = () => {
   return (
     <div>
-      <div className="absolute top-0 -z-10">
-        <img src={back} alt="" className="max-sm:h-[450px]"/>
+      <div className="absolute top-0 -z-10 ">
+        <img src={back} alt="" className="lg:w-full max-sm:w-[550px] max-sm:h-[550px]"/>
       </div>
       <div className="">
         <img
           src={front}
           alt=""
-          className="w-full h-auto max-sm:h-[450px] max-sm:absolute max-sm:top-0 max-sm:object-cover  absolute opacity-55 top-0 -z-10 object-contain"
+          className="lg:w-full lg:h-auto  max-sm:w-[550px] max-sm:h-[550px] max-sm:absolute max-sm:top-0 max-sm:object-cover  absolute opacity-55 top-0 -z-10 object-contain"
         />
       </div>
-      <div className="lg:mx-[175px] lg:my-[150px] md:mx-[150px] md:my-[50px] sm:mx-[50px] sm:my-[30px] max-sm:mx-[10px] max-sm:my-0 ">
+      <div className="lg:mx-[175px] lg:my-[150px] md:mx-[150px] md:my-[50px] sm:mx-[50px] sm:my-[30px] max-sm:mx-[20px]  max-sm:my-[100px] ">
         <h1 className="text-white  lg:text-[100px] md:text-[50px] sm:text-[35px] max-sm:text-[35px] lg:leading-[140px] md:leading-[70px]  lg:w-[70%] md:w-[90%]">
           Travel & Explore the World
         </h1>

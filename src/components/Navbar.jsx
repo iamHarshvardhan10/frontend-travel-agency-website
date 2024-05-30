@@ -1,38 +1,78 @@
+import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../assets/asset 0.png";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
   return (
-    <>
-      <nav className="flex item-center justify-between mt-[20px] mb-0 ml-[35px] mr-[35px]">
-        <Link to="/">
+    <nav className="relative md:flex md:item-center justify-between lg:mt-[20px] md:mb-0 md:ml-[35px] md:mr-[35px] max-sm:ml-[10px] max-sm:mr-[10px] max-sm:mb-[10px] max-sm:mt-[10px] sm:ml-[10px] sm:mr-[10px] sm:mb-[10px] sm:mt-[10px]">
+      <div className="flex items-center justify-between">
+        <Link to="/" className="">
           <img src={logo} alt="logo" />
         </Link>
-        <div className="flex items-center gap-8">
-          <ul className="flex  items-center gap-8">
-            <li className="text-[18px]  text-white  hover:text-[#489a6a] cursor-pointer">
-              <Link to="/" className="font-workSans">Home</Link>
-            </li>
-            <li className="text-[18px]  text-white   hover:text-[#489a6a] cursor-pointer">
-              <Link to="/about" className="font-workSans">About us</Link>
-            </li>
-            <li className="text-[18px]   text-white   hover:text-[#489a6a] cursor-pointer">
-              <Link to="/tour" className="font-workSans">Tours</Link>
-            </li>
-            <li className="text-[18px]  text-white  hover:text-[#489a6a] cursor-pointer">
-              <Link to="/review" className="font-workSans">Reviews</Link>
-            </li>
-            <li className="text-[18px]  text-white  hover:text-[#489a6a] cursor-pointer">
-              <Link to="/contact" className="font-workSans">Contact</Link>
-            </li>
-          </ul>
-          <button className="text-[18px] font-sans text-white  bg-[#489a6a] px-4 py-2  rounded-md">
-            1233-123-342
-          </button>
-        </div>
-      </nav>
-    </>
+        <button
+          onClick={toggleMenu}
+          className="text-white md:hidden max-sm:block sm:block"
+        >
+          {menuOpen ? <FaTimes className="text-[32px] text-black" /> : <FaBars className="text-[32px] text-white"  />}
+        </button>
+      </div>
+      <div
+        className={`absolute top-full right-0  w-48  opacity-80 md:w-auto md:static bg-[#48a9a6] shadow-lg md:shadow-none rounded-lg p-4 mt-2 md:mt-0 md:flex md:bg-transparent transition-all duration-300 ${
+          menuOpen ? "block" : "hidden"
+        }`}
+      >
+        <ul className="md:flex md:flex-row  md:items-center md:gap-8 max-sm:flex max-sm:items-center max-sm:flex-col max-sm:gap-4 sm:flex sm:items-center sm:flex-col sm:gap-4">
+          <li className="text-[18px]  md:text-white md:font-normal max-sm:text-black max-sm:font-bold sm:text-black sm:font-bold hover:text-[#489a6a] cursor-pointer">
+            <Link to="/" className="font-workSans">
+              Home
+            </Link>
+          </li>
+          <li className="text-[18px]  md:text-white md:font-normal max-sm:text-black max-sm:font-bold sm:text-black sm:font-bold hover:text-[#489a6a] cursor-pointer">
+            <Link to="/about" className="font-workSans">
+              About us
+            </Link>
+          </li>
+          <li className="text-[18px]   md:text-white md:font-normal max-sm:text-black max-sm:font-bold sm:text-black sm:font-bold  hover:text-[#489a6a] cursor-pointer">
+            <Link to="/tour" className="font-workSans">
+              Tours
+            </Link>
+          </li>
+          <li className="text-[18px]  md:text-white md:font-normal max-sm:text-black max-sm:font-bold sm:text-black sm:font-bold hover:text-[#489a6a] cursor-pointer">
+            <Link to="/review" className="font-workSans">
+              Reviews
+            </Link>
+          </li>
+          <li className="text-[18px]  md:text-white md:font-normal max-sm:text-black max-sm:font-bold sm:text-black sm:font-bold hover:text-[#489a6a] cursor-pointer">
+            <Link to="/contact" className="font-workSans">
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
 
