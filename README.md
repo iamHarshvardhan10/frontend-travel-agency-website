@@ -2,7 +2,7 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-![screencapture-frontend-travel-ag](https://github.com/iamHarshvardhan10/frontend-travel-agency-website/assets/109547739/018874da-0528-4bb7-b99c-258a493e28fe)
+
 
 
 Currently, two official plugins are available:
